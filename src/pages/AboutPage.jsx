@@ -36,7 +36,7 @@ const values = [
 const About = () => {
   const navigate = useNavigate();
   return (
-    <div className="w-full bg-gray-50 px-4 text-center py-12 md:py-20 md:px-6 lg:px-8">
+    <div className="w-full bg-gray-50 text-center py-12 md:py-20 md:px-6 lg:px-8">
 
       {/* Hero Banner */}
       <div
@@ -47,7 +47,7 @@ const About = () => {
         </h1>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-2 lg:px-12">
         {/* Who We Are Section */}
         <div className="mt-16 flex flex-col md:flex-row items-center gap-16">
           <div className="md:w-1/2">
@@ -69,13 +69,13 @@ const About = () => {
         </div>
 
         {/* Our Values */}
-        <div className="mt-20 text-center py-16 mx-0">
-          <h2 className="text-4xl font-bold text-[#2C3E50]">Our Values</h2>
+        <div className="mt-14 text-center py-16 mx-0">
+          <h2 className=" font-bold text-[#2C3E50] text-2xl sm:text-3xl md:text-4xl">Our Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="p-8 bg-white shadow-lg rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-xl"
+                className="p-8 px-4 bg-white shadow-lg rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-xl"
               >
                 <div className="flex justify-center mb-4">
                   {value.icon}
@@ -88,16 +88,16 @@ const About = () => {
         </div>
 
         {/* Why Choose Us */}
-        <div className="mt-20 flex flex-col md:flex-row items-center gap-16 px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row items-center px-4 sm:px-6 md:px-8 gap-6">
           <div className="md:w-1/2 flex justify-center">
             <ImageSection
               src={aboutImg}
               alt="Why Choose Us"
-              className="w-full max-w-xl object-cover rounded-lg shadow-lg transform transition duration-500 hover:scale-105"
+              className="w-full max-w-xl object-cover rounded-lg shadow-lg transform transition duration-500 hover:scale-105  sm:max-w-sm md:max-w-md"
             />
           </div>
-          <div className="md:w-1/2 text-left">
-            <h2 className="text-4xl font-bold text-[#2C3E50] mb-6">Why Choose Us?</h2>
+          <div className="text-content text-center md:text-left">
+            <h2 className="font-bold text-[#2C3E50] mb-6 text-2xl sm:text-3xl md:text-4xl">Why Choose Us?</h2>
             <ul className="space-y-6 text-gray-700 text-lg">
               <li className="flex items-start gap-4">
                 <Truck size={24} className="text-blue-600 mt-1" />
@@ -120,29 +120,39 @@ const About = () => {
         </div>
 
         {/* Team Section */}
-        <div className="mt-20 text-center">
-          <h2 className="text-4xl font-bold text-[#2C3E50] mb-10">Meet Our Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 px-6 lg:px-12">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="shadow-lg rounded-lg transform transition duration-500 hover:scale-105"
-              >
-                <div className="relative">
+        {/* Team Section */}
+        <div className="mt-14 px-2 lg:px-8">
+          <div className="max-w-screen-xl mx-auto text-center">
+            <h2 className="font-bold text-[#2C3E50] mb-8 text-2xl sm:text-3xl md:text-4xl">
+              Meet Our Team
+            </h2>
+
+            <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-10">
+              {teamMembers.map((member, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow hover:shadow-xl transition transform hover:scale-105"
+                >
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-72 object-cover rounded-t-lg transform transition duration-500 hover:scale-105"
+                    className="w-full p-4 h-64 object-cover"
                   />
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#2C3E50]">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm sm:text-base text-[#6C7A89] mt-1">
+                      {member.position}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6 bg-white rounded-b-lg">
-                  <h3 className="text-xl font-semibold text-[#2C3E50]">{member.name}</h3>
-                  <p className="text-[#6C7A89] mt-2">{member.position}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+
+
       </div>
 
       {/* Call to Action */}
