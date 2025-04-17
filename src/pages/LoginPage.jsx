@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -78,9 +79,9 @@ const LoginPage = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-[#6C7A89]">
             Don't have an account?{" "}
-            <a href="/signup" className="font-medium text-[#008CBA] hover:text-[#0074a8]">
+            <NavLink to="/sign-up" className="font-medium text-[#008CBA] hover:text-[#0074a8]">
               Sign up
-            </a>
+            </NavLink>
           </p>
         </div>
       </div>

@@ -6,7 +6,6 @@ import aboutImage1 from '../assets/about1.jpg';
 const WhoWeAre = () => {
   return (
     <>
-       
                 <div className="mt-16 flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto px-4 py-10">
                   <div className="md:w-1/2">
                     <h2 className="text-4xl font-bold text-gray-900">Who We Are</h2>
